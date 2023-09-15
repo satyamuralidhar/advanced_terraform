@@ -1,0 +1,16 @@
+{
+    "virtualNetworks": {
+        "vnet01": {
+            "address_prefix": ["192.168.0.0/16"],
+            "location": "eastus",
+            "subnets": {
+                "subnet1": {
+                    "cidr_range": "192.168.1.0/24"
+                },
+                "subnet2": {
+                    "cidr_range": "192.168.2.0/24"
+                }
+            }
+        }
+    }
+}
