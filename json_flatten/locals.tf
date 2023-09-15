@@ -18,3 +18,7 @@ locals {
 output "network" {
   value = local.network
 }
+
+output "subnets" {
+  value = {for k , v in local.network : v.subnet_name => v.subnet_address }
+}
