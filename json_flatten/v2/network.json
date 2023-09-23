@@ -1,0 +1,37 @@
+{
+    "Virtualnetwork": {
+        "production" : {
+            "address_space": ["192.168.0.0/16"],
+            "location": "eastus",
+            "subnets": {
+                "subnet01": {
+                "address_prefix": 1
+                },
+                "subnet02": {
+                    "address_prefix": 2
+                },
+                "delegated": {
+                    "address_prefix": 3
+                }
+
+            }
+
+        },
+        "dr" : {
+            "address_space": ["172.168.0.0/16"],
+            "location": "westus",
+            "subnets": {
+                "subnet01": {
+                "address_prefix": 1
+                },
+                "subnet02": {
+                    "address_prefix": 2
+                },
+                "delegated": {
+                    "address_prefix": 3
+                }
+
+            }
+        }
+    }
+}
