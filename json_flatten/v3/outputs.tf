@@ -8,3 +8,7 @@ output "rsg02_op" {
 output "network" {
   value = local.network
 }
+
+output "network02" {
+  value = local.network02
+}
