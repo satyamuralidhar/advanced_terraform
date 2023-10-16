@@ -1,0 +1,548 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.6.1",
+  "variables": {
+    "rsgs": {
+      "value": [
+        {
+          "bastion": true,
+          "location": "eastus",
+          "storage": true,
+          "suffix": "training"
+        },
+        {
+          "bastion": false,
+          "location": "southcentralus",
+          "storage": false,
+          "suffix": "utility"
+        }
+      ]
+    },
+    "users": {
+      "value": {
+        "user1": { "name": "user01" },
+        "user2": { "name": "user02" },
+        "user3": { "name": "user03" }
+      }
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "demo": {
+        "sensitive": false,
+        "type": [
+          "list",
+          [
+            "tuple",
+            [
+              ["object", { "name": "string" }],
+              [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string"
+                }
+              ]
+            ]
+          ]
+        ],
+        "value": [
+          [
+            { "name": "user01" },
+            {
+              "bastion": true,
+              "location": "eastus",
+              "storage": true,
+              "suffix": "training"
+            }
+          ],
+          [
+            { "name": "user01" },
+            {
+              "bastion": false,
+              "location": "southcentralus",
+              "storage": false,
+              "suffix": "utility"
+            }
+          ],
+          [
+            { "name": "user02" },
+            {
+              "bastion": true,
+              "location": "eastus",
+              "storage": true,
+              "suffix": "training"
+            }
+          ],
+          [
+            { "name": "user02" },
+            {
+              "bastion": false,
+              "location": "southcentralus",
+              "storage": false,
+              "suffix": "utility"
+            }
+          ],
+          [
+            { "name": "user03" },
+            {
+              "bastion": true,
+              "location": "eastus",
+              "storage": true,
+              "suffix": "training"
+            }
+          ],
+          [
+            { "name": "user03" },
+            {
+              "bastion": false,
+              "location": "southcentralus",
+              "storage": false,
+              "suffix": "utility"
+            }
+          ]
+        ]
+      },
+      "demo2": {
+        "sensitive": false,
+        "type": [
+          "object",
+          {
+            "user01-training": [
+              "object",
+              {
+                "bastion": "bool",
+                "location": "string",
+                "storage": "bool",
+                "suffix": "string",
+                "username": "string"
+              }
+            ],
+            "user01-utility": [
+              "object",
+              {
+                "bastion": "bool",
+                "location": "string",
+                "storage": "bool",
+                "suffix": "string",
+                "username": "string"
+              }
+            ],
+            "user02-training": [
+              "object",
+              {
+                "bastion": "bool",
+                "location": "string",
+                "storage": "bool",
+                "suffix": "string",
+                "username": "string"
+              }
+            ],
+            "user02-utility": [
+              "object",
+              {
+                "bastion": "bool",
+                "location": "string",
+                "storage": "bool",
+                "suffix": "string",
+                "username": "string"
+              }
+            ],
+            "user03-training": [
+              "object",
+              {
+                "bastion": "bool",
+                "location": "string",
+                "storage": "bool",
+                "suffix": "string",
+                "username": "string"
+              }
+            ],
+            "user03-utility": [
+              "object",
+              {
+                "bastion": "bool",
+                "location": "string",
+                "storage": "bool",
+                "suffix": "string",
+                "username": "string"
+              }
+            ]
+          }
+        ],
+        "value": {
+          "user01-training": {
+            "bastion": true,
+            "location": "eastus",
+            "storage": true,
+            "suffix": "training",
+            "username": "user01"
+          },
+          "user01-utility": {
+            "bastion": false,
+            "location": "southcentralus",
+            "storage": false,
+            "suffix": "utility",
+            "username": "user01"
+          },
+          "user02-training": {
+            "bastion": true,
+            "location": "eastus",
+            "storage": true,
+            "suffix": "training",
+            "username": "user02"
+          },
+          "user02-utility": {
+            "bastion": false,
+            "location": "southcentralus",
+            "storage": false,
+            "suffix": "utility",
+            "username": "user02"
+          },
+          "user03-training": {
+            "bastion": true,
+            "location": "eastus",
+            "storage": true,
+            "suffix": "training",
+            "username": "user03"
+          },
+          "user03-utility": {
+            "bastion": false,
+            "location": "southcentralus",
+            "storage": false,
+            "suffix": "utility",
+            "username": "user03"
+          }
+        }
+      }
+    },
+    "root_module": {}
+  },
+  "output_changes": {
+    "demo": {
+      "actions": ["create"],
+      "before": null,
+      "after": [
+        [
+          { "name": "user01" },
+          {
+            "bastion": true,
+            "location": "eastus",
+            "storage": true,
+            "suffix": "training"
+          }
+        ],
+        [
+          { "name": "user01" },
+          {
+            "bastion": false,
+            "location": "southcentralus",
+            "storage": false,
+            "suffix": "utility"
+          }
+        ],
+        [
+          { "name": "user02" },
+          {
+            "bastion": true,
+            "location": "eastus",
+            "storage": true,
+            "suffix": "training"
+          }
+        ],
+        [
+          { "name": "user02" },
+          {
+            "bastion": false,
+            "location": "southcentralus",
+            "storage": false,
+            "suffix": "utility"
+          }
+        ],
+        [
+          { "name": "user03" },
+          {
+            "bastion": true,
+            "location": "eastus",
+            "storage": true,
+            "suffix": "training"
+          }
+        ],
+        [
+          { "name": "user03" },
+          {
+            "bastion": false,
+            "location": "southcentralus",
+            "storage": false,
+            "suffix": "utility"
+          }
+        ]
+      ],
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "demo2": {
+      "actions": ["create"],
+      "before": null,
+      "after": {
+        "user01-training": {
+          "bastion": true,
+          "location": "eastus",
+          "storage": true,
+          "suffix": "training",
+          "username": "user01"
+        },
+        "user01-utility": {
+          "bastion": false,
+          "location": "southcentralus",
+          "storage": false,
+          "suffix": "utility",
+          "username": "user01"
+        },
+        "user02-training": {
+          "bastion": true,
+          "location": "eastus",
+          "storage": true,
+          "suffix": "training",
+          "username": "user02"
+        },
+        "user02-utility": {
+          "bastion": false,
+          "location": "southcentralus",
+          "storage": false,
+          "suffix": "utility",
+          "username": "user02"
+        },
+        "user03-training": {
+          "bastion": true,
+          "location": "eastus",
+          "storage": true,
+          "suffix": "training",
+          "username": "user03"
+        },
+        "user03-utility": {
+          "bastion": false,
+          "location": "southcentralus",
+          "storage": false,
+          "suffix": "utility",
+          "username": "user03"
+        }
+      },
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.6.1",
+    "values": {
+      "outputs": {
+        "demo": {
+          "sensitive": false,
+          "value": [
+            [
+              { "name": "user01" },
+              {
+                "bastion": true,
+                "location": "eastus",
+                "storage": true,
+                "suffix": "training"
+              }
+            ],
+            [
+              { "name": "user01" },
+              {
+                "bastion": false,
+                "location": "southcentralus",
+                "storage": false,
+                "suffix": "utility"
+              }
+            ],
+            [
+              { "name": "user02" },
+              {
+                "bastion": true,
+                "location": "eastus",
+                "storage": true,
+                "suffix": "training"
+              }
+            ],
+            [
+              { "name": "user02" },
+              {
+                "bastion": false,
+                "location": "southcentralus",
+                "storage": false,
+                "suffix": "utility"
+              }
+            ],
+            [
+              { "name": "user03" },
+              {
+                "bastion": true,
+                "location": "eastus",
+                "storage": true,
+                "suffix": "training"
+              }
+            ],
+            [
+              { "name": "user03" },
+              {
+                "bastion": false,
+                "location": "southcentralus",
+                "storage": false,
+                "suffix": "utility"
+              }
+            ]
+          ],
+          "type": [
+            "list",
+            [
+              "tuple",
+              [
+                ["object", { "name": "string" }],
+                [
+                  "object",
+                  {
+                    "bastion": "bool",
+                    "location": "string",
+                    "storage": "bool",
+                    "suffix": "string"
+                  }
+                ]
+              ]
+            ]
+          ]
+        },
+        "demo2": {
+          "sensitive": false,
+          "value": {
+            "user01-training": {
+              "bastion": true,
+              "location": "eastus",
+              "storage": true,
+              "suffix": "training",
+              "username": "user01"
+            },
+            "user01-utility": {
+              "bastion": false,
+              "location": "southcentralus",
+              "storage": false,
+              "suffix": "utility",
+              "username": "user01"
+            },
+            "user02-training": {
+              "bastion": true,
+              "location": "eastus",
+              "storage": true,
+              "suffix": "training",
+              "username": "user02"
+            },
+            "user02-utility": {
+              "bastion": false,
+              "location": "southcentralus",
+              "storage": false,
+              "suffix": "utility",
+              "username": "user02"
+            },
+            "user03-training": {
+              "bastion": true,
+              "location": "eastus",
+              "storage": true,
+              "suffix": "training",
+              "username": "user03"
+            },
+            "user03-utility": {
+              "bastion": false,
+              "location": "southcentralus",
+              "storage": false,
+              "suffix": "utility",
+              "username": "user03"
+            }
+          },
+          "type": [
+            "object",
+            {
+              "user01-training": [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string",
+                  "username": "string"
+                }
+              ],
+              "user01-utility": [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string",
+                  "username": "string"
+                }
+              ],
+              "user02-training": [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string",
+                  "username": "string"
+                }
+              ],
+              "user02-utility": [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string",
+                  "username": "string"
+                }
+              ],
+              "user03-training": [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string",
+                  "username": "string"
+                }
+              ],
+              "user03-utility": [
+                "object",
+                {
+                  "bastion": "bool",
+                  "location": "string",
+                  "storage": "bool",
+                  "suffix": "string",
+                  "username": "string"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "root_module": {}
+    }
+  },
+  "configuration": {
+    "root_module": {
+      "outputs": {
+        "demo": { "expression": { "references": ["local.rsgs_list"] } },
+        "demo2": { "expression": { "references": ["local.users_rsgs"] } }
+      },
+      "variables": { "rsgs": {}, "users": {} }
+    }
+  },
+  "timestamp": "2023-10-16T14:51:02Z",
+  "errored": false
+}
