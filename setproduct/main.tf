@@ -5,6 +5,7 @@ locals {
     for i in local.rsgs_list : 
     format("%s-%s",i[0]["name"],i[1]["suffix"]) => {
         username = i[0]["name"]
+        resource_group_name = format("%s-%s",i[0]["name"],i[1]["suffix"])
         suffix = i[1]["suffix"]
         location =i[1]["location"]
         storage = i[1]["storage"]
