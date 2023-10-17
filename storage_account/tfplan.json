@@ -1,0 +1,218 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.6.1",
+  "variables": { "suffix": { "value": "st" } },
+  "planned_values": {
+    "outputs": {
+      "collection_of_storage": {
+        "sensitive": false,
+        "type": [
+          "object",
+          {
+            "dev-storage-st": [
+              "object",
+              {
+                "account_replication_type": "string",
+                "account_tier": "string",
+                "location": "string",
+                "name": "string",
+                "resource_group_name": "string"
+              }
+            ],
+            "prod-storage-st": [
+              "object",
+              {
+                "account_replication_type": "string",
+                "account_tier": "string",
+                "location": "string",
+                "name": "string",
+                "resource_group_name": "string"
+              }
+            ],
+            "stage-storage-st": [
+              "object",
+              {
+                "account_replication_type": "string",
+                "account_tier": "string",
+                "location": "string",
+                "name": "string",
+                "resource_group_name": "string"
+              }
+            ]
+          }
+        ],
+        "value": {
+          "dev-storage-st": {
+            "account_replication_type": "LRS",
+            "account_tier": "Standard",
+            "location": "eastus",
+            "name": "dev-storage-st",
+            "resource_group_name": "dev-resourcegroup"
+          },
+          "prod-storage-st": {
+            "account_replication_type": "LRS",
+            "account_tier": "Premium",
+            "location": "eastus",
+            "name": "prod-storage-st",
+            "resource_group_name": "prod-resourcegroup"
+          },
+          "stage-storage-st": {
+            "account_replication_type": "LRS",
+            "account_tier": "Standard",
+            "location": "eastus",
+            "name": "stage-storage-st",
+            "resource_group_name": "stage-resourcegroup"
+          }
+        }
+      },
+      "resource_group_name": {
+        "sensitive": false,
+        "type": ["tuple", ["string", "string", "string"]],
+        "value": [
+          "dev-resourcegroup",
+          "stage-resourcegroup",
+          "prod-resourcegroup"
+        ]
+      }
+    },
+    "root_module": {}
+  },
+  "output_changes": {
+    "collection_of_storage": {
+      "actions": ["create"],
+      "before": null,
+      "after": {
+        "dev-storage-st": {
+          "account_replication_type": "LRS",
+          "account_tier": "Standard",
+          "location": "eastus",
+          "name": "dev-storage-st",
+          "resource_group_name": "dev-resourcegroup"
+        },
+        "prod-storage-st": {
+          "account_replication_type": "LRS",
+          "account_tier": "Premium",
+          "location": "eastus",
+          "name": "prod-storage-st",
+          "resource_group_name": "prod-resourcegroup"
+        },
+        "stage-storage-st": {
+          "account_replication_type": "LRS",
+          "account_tier": "Standard",
+          "location": "eastus",
+          "name": "stage-storage-st",
+          "resource_group_name": "stage-resourcegroup"
+        }
+      },
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "resource_group_name": {
+      "actions": ["create"],
+      "before": null,
+      "after": [
+        "dev-resourcegroup",
+        "stage-resourcegroup",
+        "prod-resourcegroup"
+      ],
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.6.1",
+    "values": {
+      "outputs": {
+        "collection_of_storage": {
+          "sensitive": false,
+          "value": {
+            "dev-storage-st": {
+              "account_replication_type": "LRS",
+              "account_tier": "Standard",
+              "location": "eastus",
+              "name": "dev-storage-st",
+              "resource_group_name": "dev-resourcegroup"
+            },
+            "prod-storage-st": {
+              "account_replication_type": "LRS",
+              "account_tier": "Premium",
+              "location": "eastus",
+              "name": "prod-storage-st",
+              "resource_group_name": "prod-resourcegroup"
+            },
+            "stage-storage-st": {
+              "account_replication_type": "LRS",
+              "account_tier": "Standard",
+              "location": "eastus",
+              "name": "stage-storage-st",
+              "resource_group_name": "stage-resourcegroup"
+            }
+          },
+          "type": [
+            "object",
+            {
+              "dev-storage-st": [
+                "object",
+                {
+                  "account_replication_type": "string",
+                  "account_tier": "string",
+                  "location": "string",
+                  "name": "string",
+                  "resource_group_name": "string"
+                }
+              ],
+              "prod-storage-st": [
+                "object",
+                {
+                  "account_replication_type": "string",
+                  "account_tier": "string",
+                  "location": "string",
+                  "name": "string",
+                  "resource_group_name": "string"
+                }
+              ],
+              "stage-storage-st": [
+                "object",
+                {
+                  "account_replication_type": "string",
+                  "account_tier": "string",
+                  "location": "string",
+                  "name": "string",
+                  "resource_group_name": "string"
+                }
+              ]
+            }
+          ]
+        },
+        "resource_group_name": {
+          "sensitive": false,
+          "value": [
+            "dev-resourcegroup",
+            "stage-resourcegroup",
+            "prod-resourcegroup"
+          ],
+          "type": ["tuple", ["string", "string", "string"]]
+        }
+      },
+      "root_module": {}
+    }
+  },
+  "configuration": {
+    "root_module": {
+      "outputs": {
+        "collection_of_storage": {
+          "expression": { "references": ["local.collection_of_storage"] }
+        },
+        "resource_group_name": {
+          "expression": { "references": ["local.resource_group_name"] }
+        }
+      },
+      "variables": { "suffix": { "default": "st" } }
+    }
+  },
+  "timestamp": "2023-10-17T11:40:34Z",
+  "errored": false
+}
