@@ -13,6 +13,9 @@ provider "azurerm" {
     resource_group {
       prevent_deletion_if_contains_resources = false
     }
+    key_vault {
+      purge_soft_delete_on_destroy = true
+    }
   }
 }
 
@@ -21,6 +24,14 @@ resource "azurerm_resource_group" "myrsg" {
   name     = var.location
 }
 
+locals {
+  tags = {
+    environment = var.env,
+    subscription = format('%s-%s',var.env,"subscription"),
+    budget = format('%s-%s',var,env,"budget"),
+    businessunit = format('%s-%s',var.env,"bu")
+  }
+}
 resource "azurerm_storage_account" "stg" {
   account_replication_type = var.env == "prod" ? "GRS" : "LRS"
   account_tier             = var.env == "prod" ? "Premium" : "Standard"
@@ -30,12 +41,7 @@ resource "azurerm_storage_account" "stg" {
   identity {
     type = "SystemAssigned"
   }
-  tags = {
-    environment = var.env,
-    subscription = format('%s-%s',var.env,"subscription"),
-    budget = format('%s-%s',var,env,"budget"),
-    businessunit = format('%s-%s',var.env,"bu")
-  }
+  tags = local.tags
 }
 
 data "azurerm_client_config" "current" {}
@@ -46,6 +52,7 @@ resource "azurerm_key_vault" "kv" {
   resource_group_name = azurerm_resource_group.myrsg.name
   sku_name            = var.env == "prod" ? "Premium" : "Standard"
   tenant_id           = data.azurerm_client_config.current.tenant_id
+  tags = local.tags
 }
 
 resource "azurerm_key_vault_access_policy" "kvpolicy" {
