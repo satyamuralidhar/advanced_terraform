@@ -4,9 +4,15 @@ terraform {
       version = "~>3.0.0"
       source  = "hashicorp/azurerm"
     }
+    time = {
+      source = "hashicorp/time"
+      version = "0.11.1"
+    }
   }
+
   required_version = ">=0.13.0"
 }
+provider "time" {}
 
 provider "azurerm" {
   features {
@@ -68,3 +74,6 @@ resource "azurerm_storage_container" "container" {
   storage_account_name = azurerm_storage_account.stg.name
 }
 
+output "keyvault_id" {
+  value = [for i in azurerm_key_vault.kv.name : i.id ]
+}
